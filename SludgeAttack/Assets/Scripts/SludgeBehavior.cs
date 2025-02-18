@@ -5,6 +5,8 @@ public class SludgeBehavior : MonoBehaviour
 {
     private Rigidbody2D thisbody;
 
+    public GameObject cleanParticles;
+
     public SludgeManager manager;
     Vector3 dir;
 

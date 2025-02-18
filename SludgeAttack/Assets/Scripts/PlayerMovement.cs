@@ -8,6 +8,11 @@ using UnityEngine.AI;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance {get; private set;}
+
+    public float stamina = 100;
+    public float maxStamina = 100;
+
+    public float stamRecoverySpeed = 10;
     public Vector3 maxSpeed = new Vector3(10, 10, 0);
     public Vector3 defaultSpeed = new Vector3(5, 5, 0);
     public float adaptSpeed = 0.01f;
@@ -86,8 +91,16 @@ public class PlayerMovement : MonoBehaviour
         }
         currentSpeed = new Vector3(xSpeed, ySpeed, 0);
         if (Input.GetKeyDown(KeyCode.Space)) {
-            currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
+            if (stamina > 10) {
+                stamina -= 10;
+                currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
+            }
             //currentSpeed = new Vector3(Math.Max(Math.Min(goalSpeedX + currentSpeed.x, defaultSpeed.x), defaultSpeed.x * -1) * dashMult, Math.Max(Math.Min(goalSpeedY + currentSpeed.y, defaultSpeed.y), defaultSpeed.y * -1) * dashMult, 0);
+        }
+        if(stamina < maxStamina)
+            stamina += stamRecoverySpeed * Time.deltaTime;
+        if(stamina > maxStamina) {
+            stamina = maxStamina;
         }
         thisBody.MovePosition(gameObject.transform.position + new Vector3(currentSpeed.x * Time.deltaTime, currentSpeed.y * Time.deltaTime, 0));
     }
