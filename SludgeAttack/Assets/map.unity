@@ -9713,10 +9713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a6ee3b71a73b84489cbfa82709cf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: {x: 10, y: 10, z: 0}
+  maxSpeed: 5
   defaultSpeed: {x: 3, y: 3, z: 0}
-  adaptSpeed: 8
-  decaySpeed: 8
+  adaptSpeed: 25
+  decaySpeed: 25
   dashMult: 1.5
   currentSpeed: {x: 0, y: 0, z: 0}
 --- !u!212 &1710460772

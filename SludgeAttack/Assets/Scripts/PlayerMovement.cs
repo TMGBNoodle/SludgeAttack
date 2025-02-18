@@ -78,6 +78,6 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
             //currentSpeed = new Vector3(Math.Max(Math.Min(goalSpeedX + currentSpeed.x, defaultSpeed.x), defaultSpeed.x * -1) * dashMult, Math.Max(Math.Min(goalSpeedY + currentSpeed.y, defaultSpeed.y), defaultSpeed.y * -1) * dashMult, 0);
         }
-        gameObject.transform.position = gameObject.transform.position + new Vector3(currentSpeed.x * Time.deltaTime, currentSpeed.y * Time.deltaTime, 0);
+        thisBody.MovePosition(gameObject.transform.position + new Vector3(currentSpeed.x * Time.deltaTime, currentSpeed.y * Time.deltaTime, 0));
     }
 }
