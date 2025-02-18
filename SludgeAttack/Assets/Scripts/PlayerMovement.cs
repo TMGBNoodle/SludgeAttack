@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance {get; private set;}
 
+    public ParticleSystem sprintParticles;
+
     public float stamina = 100;
     public float maxStamina = 100;
 
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         thisBody = GetComponent<Rigidbody2D>();
+        sprintParticles = transform.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -43,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float goalSpeedY = 0;
         float goalSpeedX = 0;
+
+
         if (Input.GetKey(KeyCode.W)) {
             goalSpeedY = defaultSpeed.y;
         }
@@ -93,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (stamina > 10) {
                 stamina -= 10;
+                sprintParticles.Play();
                 currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
             }
             //currentSpeed = new Vector3(Math.Max(Math.Min(goalSpeedX + currentSpeed.x, defaultSpeed.x), defaultSpeed.x * -1) * dashMult, Math.Max(Math.Min(goalSpeedY + currentSpeed.y, defaultSpeed.y), defaultSpeed.y * -1) * dashMult, 0);
