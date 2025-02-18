@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1488568129214117881}
   m_Layer: 0
   m_Name: Sludge
-  m_TagString: Untagged
+  m_TagString: Cleanable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc55218b61646b3459923e9ae8c29dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!50 &6722297274235248388
 Rigidbody2D:
   serializedVersion: 5

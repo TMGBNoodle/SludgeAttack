@@ -27,6 +27,7 @@ public class MopControl : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         print("Collision with mop");
+        print(collision.gameObject.tag);
         if(collision.gameObject.tag == "Cleanable") {
             SludgeBehavior behavior = collision.gameObject.GetComponent<SludgeBehavior>();
             behavior.clean();
