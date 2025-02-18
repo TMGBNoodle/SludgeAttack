@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance {get; private set;}
     public Vector3 maxSpeed = new Vector3(10, 10, 0);
     public Vector3 defaultSpeed = new Vector3(5, 5, 0);
     public float adaptSpeed = 0.01f;
@@ -17,6 +18,16 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 currentSpeed = new Vector3(0, 0, 0);
     private Rigidbody2D thisBody;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         thisBody = GetComponent<Rigidbody2D>();

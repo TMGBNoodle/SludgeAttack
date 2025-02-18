@@ -4,6 +4,8 @@ using UnityEngine;
 public class SludgeBehavior : MonoBehaviour
 {
     private Rigidbody2D thisbody;
+
+    public SludgeManager manager;
     Vector3 dir;
 
     void Start()
@@ -14,5 +16,13 @@ public class SludgeBehavior : MonoBehaviour
     void Update()
     {
         thisbody.MovePosition(gameObject.transform.position + (dir * Time.deltaTime));
+    }
+
+    public void clean() {
+        if (manager != null) {
+            manager.updateSludge(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
     }
 }
