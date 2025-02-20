@@ -14995,7 +14995,7 @@ MonoBehaviour:
   stamRecoverySpeed: 10
   maxSpeed: {x: 10, y: 10, z: 0}
   defaultSpeed: {x: 3, y: 3, z: 0}
-  adaptSpeed: 8
+  adaptSpeed: 15
   decaySpeed: 8
   dashMult: 3
   currentSpeed: {x: 0, y: 0, z: 0}
@@ -15101,7 +15101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followRad: 0.2
-  particles: {fileID: 0}
 --- !u!4 &1720767381
 Transform:
   m_ObjectHideFlags: 0
