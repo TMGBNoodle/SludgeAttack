@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 currentSpeed = new Vector3(0, 0, 0);
     private Rigidbody2D thisBody;
+
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake() {
         if (Instance == null) {
@@ -38,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         thisBody = GetComponent<Rigidbody2D>();
+
+        audioSource = GetComponent<AudioSource>();
+
         sprintParticles = transform.GetComponentInChildren<ParticleSystem>();
     }
 
@@ -103,6 +109,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (stamina > 10) {
                 stamina -= 10;
+
+                audioSource.Play();
+
                 sprintParticles.Play();
                 if(xMove && yMove) {
                     currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
