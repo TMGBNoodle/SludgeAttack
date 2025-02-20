@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: fc55218b61646b3459923e9ae8c29dd7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - squishSound: {fileID: 8300000, guid: 3808d277fdca8a84abda01599b3eb669, type: 3}
+  - cleanParticles: {instanceID: 0}
+  - manager: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
