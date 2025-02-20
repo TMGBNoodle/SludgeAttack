@@ -5,12 +5,9 @@ public class MopControl : MonoBehaviour
 {
     public float followRad = 0.5f;
 
-    public ParticleSystem particles;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        particles = transform.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -31,7 +28,6 @@ public class MopControl : MonoBehaviour
         print("Collision with mop");
         print(collision.gameObject.tag);
         if(collision.gameObject.tag == "Cleanable") {
-            particles.Play();
             SludgeBehavior behavior = collision.gameObject.GetComponent<SludgeBehavior>();
             behavior.clean();
         }

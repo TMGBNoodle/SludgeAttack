@@ -47,18 +47,23 @@ public class PlayerMovement : MonoBehaviour
         float goalSpeedY = 0;
         float goalSpeedX = 0;
 
-
+        bool xMove = false;
+        bool yMove = false;
         if (Input.GetKey(KeyCode.W)) {
             goalSpeedY = defaultSpeed.y;
+            yMove = true;
         }
         if (Input.GetKey(KeyCode.S)) {
             goalSpeedY = defaultSpeed.y * -1;
+            yMove = true;
         }
         if (Input.GetKey(KeyCode.A)) {
             goalSpeedX = defaultSpeed.x * -1;
+            xMove = true;
         }
         if (Input.GetKey(KeyCode.D)) {
             goalSpeedX = defaultSpeed.x;
+            xMove = true;
         }
         float xDif = goalSpeedX - currentSpeed.x;
         float yDif = goalSpeedY - currentSpeed.y;
@@ -99,7 +104,11 @@ public class PlayerMovement : MonoBehaviour
             if (stamina > 10) {
                 stamina -= 10;
                 sprintParticles.Play();
-                currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
+                if(xMove && yMove) {
+                    currentSpeed = new Vector3(goalSpeedX * dashMult, goalSpeedY *dashMult, 0);
+                } else {
+                    currentSpeed = new Vector3(1.5f * goalSpeedX * dashMult, 1.5f * goalSpeedY *dashMult, 0);
+                }
             }
             //currentSpeed = new Vector3(Math.Max(Math.Min(goalSpeedX + currentSpeed.x, defaultSpeed.x), defaultSpeed.x * -1) * dashMult, Math.Max(Math.Min(goalSpeedY + currentSpeed.y, defaultSpeed.y), defaultSpeed.y * -1) * dashMult, 0);
         }
