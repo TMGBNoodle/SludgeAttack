@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set;}
 
-    private int charactersPerSecond = 30;
+    private int charactersPerSecond = 10;
 
     public GameObject sludgeParent;
 
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     public void StartDialogue(String[] dialogue, string npcName, int startPosition)
     {
 
-        nameText.text = name;
+        nameText.text = npcName;
 
         dialoguePanel.SetActive(true);
         StopAllCoroutines();

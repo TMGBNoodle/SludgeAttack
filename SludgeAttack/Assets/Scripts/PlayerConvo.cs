@@ -33,7 +33,7 @@ public class PlayerConvo : MonoBehaviour
 
             if (hit.collider.gameObject.TryGetComponent(out NPC npc))
             {
-                GameManager.Instance.StartDialogue(npc.dialogueAsset.dialogue, npc.npcName, npc.StartPosition);
+                GameManager.Instance.StartDialogue(npc.dialogueAsset.dialogue, "Suspiciously Large Rat", npc.StartPosition);
             }
 
         }
