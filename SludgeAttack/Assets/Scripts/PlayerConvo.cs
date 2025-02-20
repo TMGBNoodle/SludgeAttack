@@ -6,6 +6,9 @@ public class PlayerConvo : MonoBehaviour
 
     [SerializeField] float talkDistance = 2;
 
+
+    private string[] dialogueText;
+
     bool inConverstaion;
 
     private void Update()
@@ -22,7 +25,7 @@ public class PlayerConvo : MonoBehaviour
     {
         Debug.Log("Interact");
 
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, talkDistance, Vector2.zero);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, talkDistance, Vector2.up,0, LayerMask.GetMask("NPC"));
 
         if (hit)
         {
@@ -30,8 +33,7 @@ public class PlayerConvo : MonoBehaviour
 
             if (hit.collider.gameObject.TryGetComponent(out NPC npc))
             {
-
-                GameManager.Instance.StartDialogue(npc.dialogueAsset, npc.npcName, npc.StartPosition);
+                GameManager.Instance.StartDialogue(npc.dialogueAsset.dialogue, npc.npcName, npc.StartPosition);
             }
 
         }

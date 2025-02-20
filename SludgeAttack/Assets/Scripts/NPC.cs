@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour
 
     public DialogueAsset dialogueAsset;
 
+   
+
     [HideInInspector]
 
     public int StartPosition
