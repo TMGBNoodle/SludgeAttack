@@ -9,7 +9,7 @@ public class PlayerConvo : MonoBehaviour
 
     private string[] dialogueText;
 
-    bool inConverstaion;
+    bool inConverstaion = true;
 
     private void Update()
     {

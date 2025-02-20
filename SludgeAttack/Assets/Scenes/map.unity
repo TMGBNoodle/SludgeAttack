@@ -9242,10 +9242,8 @@ GameObject:
   - component: {fileID: 255155153}
   - component: {fileID: 255155152}
   - component: {fileID: 255155155}
-  - component: {fileID: 255155154}
-  - component: {fileID: 255155157}
-  - component: {fileID: 255155156}
   - component: {fileID: 255155158}
+  - component: {fileID: 255155159}
   m_Layer: 6
   m_Name: Rat
   m_TagString: Untagged
@@ -9296,7 +9294,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8652089180121797414, guid: cee0f36142362c845be9396c7e0e7292, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9317,57 +9315,12 @@ Transform:
   m_GameObject: {fileID: 255155151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -3.5, z: -0.001}
+  m_LocalPosition: {x: 1.5, y: -3.5, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!66 &255155154
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255155151}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 1
-  m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 255155151}
 --- !u!50 &255155155
 Rigidbody2D:
   serializedVersion: 5
@@ -9395,8 +9348,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!19719996 &255155156
-TilemapCollider2D:
+--- !u!114 &255155158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255155151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f719b686f9ba64fae6786f217b5b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstInteraction: 1
+  repeatStartPosition: 0
+  npcName: Rat
+  dialogueAsset: {fileID: 11400000, guid: eac827485136abd45a896da53a552052, type: 2}
+--- !u!58 &255155159
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9425,68 +9394,12 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
---- !u!1839735485 &255155157
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255155151}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
---- !u!114 &255155158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255155151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f719b686f9ba64fae6786f217b5b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstInteraction: 1
-  repeatStartPosition: 0
-  npcName: Rat
-  dialogueAsset: {fileID: 11400000, guid: eac827485136abd45a896da53a552052, type: 2}
+  m_Radius: 0.08
 --- !u!1 &335356629
 GameObject:
   m_ObjectHideFlags: 0
@@ -9802,7 +9715,6 @@ GameObject:
   - component: {fileID: 565766101}
   - component: {fileID: 565766104}
   - component: {fileID: 565766103}
-  - component: {fileID: 565766105}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9823,9 +9735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sludgeParent: {fileID: 174859854}
-  dialoguePanel: {fileID: 0}
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 190350475}
+  nameText: {fileID: 835815832}
+  dialogueText: {fileID: 1808443863}
   sludgeSpawners: []
 --- !u!4 &565766102
 Transform:
@@ -9934,19 +9846,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5459366, y: 10.42981}
   m_EdgeRadius: 0
---- !u!114 &565766105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565766100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65775f494be9e1647a155663c1d33f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  talkDistance: 2
 --- !u!1 &835815830
 GameObject:
   m_ObjectHideFlags: 0
@@ -15637,6 +15536,7 @@ GameObject:
   - component: {fileID: 1710460770}
   - component: {fileID: 1710460769}
   - component: {fileID: 1710460774}
+  - component: {fileID: 1710460775}
   m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
@@ -15897,6 +15797,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1710460775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710460768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65775f494be9e1647a155663c1d33f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkDistance: 2
 --- !u!1 &1720767379
 GameObject:
   m_ObjectHideFlags: 0
