@@ -20,6 +20,10 @@ public class PlayerConvo : MonoBehaviour
                 Interact();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManager.Instance.EndDialogue();
+        }
     }
     void Interact()
     {
