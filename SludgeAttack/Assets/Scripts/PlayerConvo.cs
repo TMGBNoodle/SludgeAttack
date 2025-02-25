@@ -33,11 +33,14 @@ public class PlayerConvo : MonoBehaviour
 
         if (hit)
         {
-            Debug.Log("Hit Something");
+            Debug.Log("Hit Something Dialogue");
 
             if (hit.collider.gameObject.TryGetComponent(out NPC npc))
             {
-                GameManager.Instance.StartDialogue(npc.dialogueAsset.dialogue, "Suspiciously Large Rat", npc.StartPosition);
+                if(npc.dialogueAsset.name == "Coffee") {
+                    PlayerMovement.Instance.stamina = PlayerMovement.Instance.maxStamina;
+                }
+                GameManager.Instance.StartDialogue(npc.dialogueAsset.dialogue, npc.dialogueAsset.name, npc.StartPosition);
             }
 
         }

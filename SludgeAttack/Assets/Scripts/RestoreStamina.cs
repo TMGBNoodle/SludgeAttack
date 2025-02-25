@@ -16,6 +16,7 @@ public class RestoreStamina : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        print("Coffee room entered");
         if (collision.gameObject.tag == "Player") {
             PlayerMovement.Instance.stamina = 100;
         }
